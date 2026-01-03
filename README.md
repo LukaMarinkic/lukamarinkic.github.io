@@ -1,2 +1,2 @@
-# myPage
-my personal Website
+# my Pages
+my personal Websites
