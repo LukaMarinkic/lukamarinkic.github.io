@@ -15,7 +15,23 @@ h2 { font-size:1.3rem; color:var(--accent); margin:2.5rem 0 1rem; border-bottom:
 ul { list-style:none; padding:0; }
 li { padding:0.35rem 0; }
 li::before { content:"→"; color:var(--accent); margin-right:0.6rem; }
-.tag { display:inline-block; background:rgba(88,166,255,0.12); color:var(--accent); padding:0.15rem 0.6rem; border-radius:999px; font-size:0.8rem; margin:0.15rem 0.2rem; border:1px solid rgba(88,166,255,0.25); }
+/* Block-Logo-Stack wie GitHub-Profil */
+.stack-row { display:flex; flex-wrap:wrap; gap:0.6rem; align-items:center; }
+.stack-block { display:inline-flex; align-items:center; gap:0.5rem; padding:0.35rem 0.7rem; border-radius:6px; font-weight:600; font-size:0.85rem; border:1px solid rgba(255,255,255,0.08); text-decoration:none; color:#fff; }
+.stack-block .logo { width:18px; height:18px; flex-shrink:0; }
+/* Farbschema wie Screenshot */
+.py { background:#3776ab; }
+.cpp { background:#00599c; }
+.git { background:#f05032; }
+.gh { background:#181717; }
+.linux { background:#fcc624; color:#000; }
+.vsc { background:#2f80ed; }
+.neovim { background:#57a143; }
+.pytorch { background:#ee4c2c; }
+.mqtt { background:#6600cc; }
+.esp32 { background:#e7352c; }
+.email { background:#ea4335; }
+.brain { background:#58a6ff; }
 footer { margin-top:3rem; color:var(--muted); font-size:0.85rem; border-top:1px solid var(--border); padding-top:1rem; }
 a { color:var(--accent); text-decoration:none; }
 a:hover { text-decoration:underline; }
@@ -29,8 +45,7 @@ a:hover { text-decoration:underline; }
 <section>
 <h2>Über mich</h2>
 <div class="card">
-<p>Ich bin Luka (geb. 08.09.2008), Schüler am Beruflichen Gymnasium <strong>Louis-LePoix-Schule Baden-Baden</strong> (Profil <strong>TGI — Informationstechnik</strong>). Mein Ziel: Allgemeine Hochschulreife (Abitur 2027) und direkt danach der duale Studienplatz <strong>DHBW Karlsruhe / Atruvia AG</strong> (Informatik — Informationstechnik, Start WS 2027).</p>
-<p>Meine Kerninteressen liegen in <strong>Mathematik</strong>, <strong>Physik</strong> und <strong>IT</strong>. Ich versuche, Klassenstoff in funktionierenden Code zu übersetzen — von Datenstrukturen (C++) über Python-Utilities bis zu IoT-Projekten.</p>
+<p>Ich bin Luka, Schüler mit Ziel Allgemeine Hochschulreife und anschließendem dualen Studienplatz <strong>DHBW Karlsruhe / Atruvia AG</strong> (Informatik — Informationstechnik, WS 2027). Meine Kerninteressen: <strong>Mathematik</strong>, <strong>Physik</strong> und <strong>IT</strong> — oft als funktionierender Code umgesetzt.</p>
 </div>
 </section>
 
@@ -38,11 +53,11 @@ a:hover { text-decoration:underline; }
 <h2>Aktuelle Projekte</h2>
 <div class="card">
 <ul>
-<li><strong>DSA-Lab (C++)</strong> — Implementierung klassischer Datenstrukturen (Stack, Queue, Linked List) von Grund auf, basierend auf Schul-Pseudocode. <a href="https://github.com/LukaMarinkic/DSA-Lab">GitHub</a></li>
-<li><strong>MQTT Broker (IoT)</strong> — Eigenständiges Projekt (ESP32 + MQTT) für BPE 11.1, aktuell ohne physisches Board, Broker auf Laptop (Port 1883). <a href="https://github.com/LukaMarinkic/lukamarinkic.github.io">Verwandt</a></li>
-<li><strong>Python-Utilities</strong> — Kleine Skripte für Mathe- und Physik-Probleme aus dem Unterricht.</li>
-<li><strong>3Blue1Brown Captions</strong> — Fork des Transkript-Repos; Interesse an visuellen Mathematik-Ansätzen. <a href="https://github.com/LukaMarinkic/captions">GitHub</a></li>
-<li><strong>pygsheets</strong> — Python-API für Google Sheets (Fork). <a href="https://github.com/LukaMarinkic/pygsheets">GitHub</a></li>
+<li><strong>DSA-Lab (C++)</strong> — Datenstrukturen (Stack, Queue, Linked List) von Grund auf. <a href="https://github.com/LukaMarinkic/DSA-Lab">GitHub</a></li>
+<li><strong>MQTT Broker (IoT)</strong> — ESP32 + MQTT für BPE 11.1, Broker auf Laptop (Port 1883). <a href="https://github.com/LukaMarinkic/lukamarinkic.github.io">Verwandt</a></li>
+<li><strong>Python-Utilities</strong> — Skripte für Mathe- und Physik-Probleme aus dem Unterricht.</li>
+<li><strong>KI Email Agent (Google OAuth)</strong> — Automatisierter E-Mail-Workflow mit OAuth (Gmail API, `email-workflow`-Skill), Tracking und Entwurfsmodus. <a href="https://github.com/LukaMarinkic">Repo-Bezug</a></li>
+<li><strong>Second Brain</strong> — Persönliches Wissens-Repo (Markdown, Wikilinks, Obsidian-kompatibel) für Notizen zu Mathe, Physik, IT und Karriere-Recherche. <a href="/home/luka/Documents/secondBrain/secondBrain/">Repo</a></li>
 </ul>
 </div>
 </section>
@@ -54,10 +69,9 @@ a:hover { text-decoration:underline; }
 <ul>
 <li><strong>Algorithmen & Datenstrukturen</strong> — wie Dinge unter der Haube funktionieren</li>
 <li><strong>Angewandte Mathematik</strong> — Vektoren, Parabeln, Geometrie; Code macht Mathe greifbar</li>
-<li><strong>Physik-Simulationen</strong> — Schwerkraft, Schwingungen, Wellen (z. B. Pendel, Reflexion, Beugung)</li>
-<li><strong>3Blue1Brown</strong> — visuelle Ansätze zur Mathematik</li>
+<li><strong>Physik-Simulationen</strong> — Schwerkraft, Schwingungen, Wellen</li>
+<li><strong>Visualisierung von Mathematik & Physik</strong> — z. B. durch 3Blue1Brown-ähnliche Ansätze</li>
 <li><strong>Homelab / Eigenbau-PC</strong> — AMD Ryzen 5 1600X, RX 580, Endeavour OS</li>
-<li><strong>Karriere-Strategie</strong> — Cybersecurity als Hauptschiene, Rechenzentrum/Infrastruktur als Parallelschiene (siehe <a href="/workspace/karriere-recherche-informatik/">Karriere-Recherche</a>)</li>
 </ul>
 </div>
 </section>
@@ -65,22 +79,34 @@ a:hover { text-decoration:underline; }
 <section>
 <h2>Technik-Stack</h2>
 <div class="card">
-<p><span class="tag">Python</span> <span class="tag">C++</span> <span class="tag">Git</span> <span class="tag">Linux</span> <span class="tag">VS Codium</span> <span class="tag">Neovim</span> <span class="tag">PyTorch</span> <span class="tag">MQTT</span> <span class="tag">ESP32</span></p>
+<p><strong>Sprachen:</strong></p>
+<div class="stack-row" style="margin-bottom:0.5rem;">
+<a class="stack-block py" href="#" aria-label="Python"><span>🐍</span> PYTHON</a>
+<a class="stack-block cpp" href="#" aria-label="C++"><span>➕</span> C++</a>
 </div>
-</section>
-
-<section>
-<h2>Kontakt</h2>
-<div class="card">
-<p>E-Mail: <a href="mailto:luka.marinkic.personal@gmail.com">luka.marinkic.personal@gmail.com</a></p>
-<p>GitHub: <a href="https://github.com/LukaMarinkic">github.com/LukaMarinkic</a></p>
-<p>GitHub Pages: <a href="https://lukamarinkic.github.io/">lukamarinkic.github.io</a></p>
+<p><strong>Tools & Plattformen:</strong></p>
+<div class="stack-row">
+<a class="stack-block git" href="#" aria-label="Git"><span>⎇</span> GIT</a>
+<a class="stack-block gh" href="#" aria-label="GitHub"><span>●</span> GITHUB</a>
+<a class="stack-block linux" href="#" aria-label="Linux"><span>◈</span> LINUX</a>
+<a class="stack-block vsc" href="#" aria-label="VS Codium"><span>◉</span> VSCODIUM</a>
+<a class="stack-block neovim" href="#" aria-label="Neovim"><span>◉</span> NEOVIM</a>
+<a class="stack-block pytorch" href="#" aria-label="PyTorch"><span>◉</span> PYTORCH</a>
+</div>
+<div class="stack-row" style="margin-top:0.5rem;">
+<a class="stack-block mqtt" href="#" aria-label="MQTT"><span>◈</span> MQTT</a>
+<a class="stack-block esp32" href="#" aria-label="ESP32"><span>◈</span> ESP32</a>
+</div>
+<p style="margin-top:0.5rem;"><strong>Workflow:</strong></p>
+<div class="stack-row">
+<a class="stack-block email" href="#" aria-label="KI Email Agent"><span>✉</span> KI EMAIL AGENT</a>
+<a class="stack-block brain" href="#" aria-label="Second Brain"><span>◉</span> SECOND BRAIN</a>
+</div>
 </div>
 </section>
 
 <footer>
-<p>Rohling — erstellt für Änderungs-Workflow. Daten aus: <a href="/home/luka/Documents/secondBrain/secondBrain/user.md">Second Brain (user.md)</a>, <a href="https://github.com/LukaMarinkic">GitHub-Profil</a>. Feedback & Anpassungen willkommen.</p>
-<p>Agent von Luka Marinkic (Hermes)</p>
+<p>Rohling — erstellt für Änderungs-Workflow. Daten aus Second Brain, GitHub-Profil und online-Recherche. Agent von Luka Marinkic (Hermes)</p>
 </footer>
 
 </body>
